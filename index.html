@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Message for Aliza</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Body Styling */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Arial', sans-serif;
+      color: #d2a2c0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Main Heart Shape */
+    .heart {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background: #ff4e50;
+      transform: rotate(-45deg);
+      animation: heartbeat 1.2s ease-in-out infinite;
+      box-shadow: 0px 0px 20px rgba(255, 78, 80, 0.7);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: #ff4e50;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -150px; left: 0; }
+    .heart::after { left: 150px; top: 0; }
+
+    /* Floating Text */
+    .container {
+      position: absolute;
+      text-align: center;
+      font-size: 2.5em;
+      transform: rotate(45deg);
+      animation: float 4s ease-in-out infinite alternate;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+      color: #ccafd9;
+      text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+      animation: glow 2s infinite alternate;
+    }
+
+    /* Love Poem */
+    .love-note {
+      position: absolute;
+      bottom: 15%;
+      width: 80%;
+      padding: 20px;
+      background: rgba(255, 78, 80, 0.8);
+      border-radius: 15px;
+      text-align: center;
+      font-size: 1.2em;
+      color: #fff;
+      box-shadow: 0px 0px 15px rgba(255, 78, 80, 0.5);
+      animation: fadeIn 4s infinite alternate;
+    }
+
+    /* Floating Heart Shapes */
+    .floating-heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4e50;
+      transform: rotate(-45deg);
+      animation: floatHearts 8s linear infinite;
+      opacity: 0.7;
+      box-shadow: 0px 0px 10px rgba(255, 78, 80, 0.5);
+    }
+
+    .floating-heart::before,
+    .floating-heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4e50;
+      border-radius: 50%;
+    }
+
+    .floating-heart::before { top: -10px; left: 0; }
+    .floating-heart::after { left: 10px; top: 0; }
+
+    /* Emoji Styling */
+    .emoji {
+      position: absolute;
+      font-size: 3em;
+      animation: floatEmoji 3s ease-in-out infinite alternate;
+    }
+    .emoji.left { left: 15%; }
+    .emoji.right { right: 15%; }
+
+    /* Play Button */
+    .play-button {
+      position: absolute;
+      bottom: 20px;
+      padding: 15px 30px;
+      background: #ff4e50;
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      animation: fadeInButton 4s infinite alternate;
+    }
+
+    /* Keyframes */
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1) rotate(-45deg); }
+      25% { transform: scale(1.2) rotate(-45deg); }
+      50% { transform: scale(0.9) rotate(-45deg); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7); }
+      to { text-shadow: 0px 0px 20px rgba(255, 255, 255, 1); }
+    }
+
+    @keyframes floatHearts {
+      0% { transform: translateY(0) rotate(-45deg); }
+      100% { transform: translateY(-600px) rotate(-45deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInButton {
+      from { opacity: 0.8; }
+      to { opacity: 1; }
+    }
+
+    @keyframes floatEmoji {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Heart Shape -->
+  <div class="heart"></div>
+  
+  <!-- Floating Text -->
+  <div class="container">
+    <h1>I love you, Aliza</h1>
+  </div>
+
+  <!-- Love Poem -->
+  <div class="love-note">
+    Aliza, you're the melody to my heart, the star in my night sky. Every moment with you feels like magic. 🌹
+  </div>
+
+  <!-- Floating Hearts -->
+  <div class="floating-heart" style="left: 10%; top: 70%;"></div>
+  <div class="floating-heart" style="left: 20%; top: 80%;"></div>
+  <div class="floating-heart" style="left: 30%; top: 75%;"></div>
+  <div class="floating-heart" style="right: 10%; top: 80%;"></div>
+  <div class="floating-heart" style="right: 20%; top: 90%;"></div>
+  <div class="floating-heart" style="right: 30%; top: 85%;"></div>
+
+  <!-- Kissing Emojis -->
+  <div class="emoji left">😘</div>
+  <div class="emoji right">😘</div>
+
+  <!-- Play Button -->
+  <button class="play-button" onclick="playAudio()">💖 Play Music 💖</button>
+
+  <!-- Background Music -->
+  <audio id="loveAudio">
+    <source src="iloveyou.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function playAudio() {
+      const audio = document.getElementById('loveAudio');
+      audio.play();
+    }
+  </script>
+</body>
+</html>
